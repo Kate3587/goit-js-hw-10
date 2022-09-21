@@ -18,3 +18,8 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.country__list__item{
+  list-style-type: none;
+  text-align: start;
+}
