@@ -19,7 +19,20 @@ body {
   margin-bottom: 16px;
 }
 
-.country__list__item{
+.country__list__item {
+  display: flex;
+}
+
+ul {
   list-style-type: none;
-  text-align: start;
+}
+
+.list {
+font-weight: bold;
+}
+
+.list__name {
+  font-weight: bold;
+  display: flex;
+ font-size: large;
 }
