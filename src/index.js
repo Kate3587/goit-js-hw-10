@@ -23,6 +23,7 @@ function getCountryData(event) {
                 markupCountry(data[0]);
             }
             if (data.length >= 2 && data.length <= 10) {
+                console.log(data);
                 markupCountryList(data);
             } else if (data.length > 10) {
                 Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
@@ -49,15 +50,15 @@ function markupCountry(countryData) {
         </ul>`);
 };
 
-function markupCountryList(countryData) {
-    countryData.map(({ flags, name }) => {
-        return countryListEl.insertAdjacentHTML('beforeend',
-            `<li>
+function markupCountryList(dataArr) {
+    const markup = dataArr.map(({ flags, name }) => 
+        `<li>
         <div class = "country__list__item"><img src="${flags.svg}" alt="${name}" width="30px" height="50px"/>
         <p>${name.official}</p></div>
-        </li>`);
-    }).join('');
-};
+        </li>`
+    ).join('');
+    countryListEl.insertAdjacentHTML('beforeend', markup);
+}
 
 function removeMarkup(element) {
     element.innerHTML = '';
